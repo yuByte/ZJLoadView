@@ -11,21 +11,28 @@
 
 @interface ViewController ()
 
+@property (nonatomic, strong) ZJLoadView *myLoadView;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self.view addSubview:self.myLoadView];
 
-    ZJLoadView *loadView = [[ZJLoadView alloc] initWithFrame:CGRectMake(0, 0, 80, 80)];
-    loadView.layer.cornerRadius = 5;
-    loadView.backgroundColor = [UIColor blackColor];
-    loadView.alpha = 0.3;
-    loadView.center = self.view.center;
-    [self.view addSubview:loadView];
 }
 
-
-
+-(ZJLoadView *)myLoadView
+{
+    if (_myLoadView== nil)
+    {
+        _myLoadView = [[ZJLoadView alloc] initWithFrame:CGRectMake(0, 0, 110, 150)];
+        _myLoadView.layer.cornerRadius = 5;
+        _myLoadView.backgroundColor = [UIColor blackColor];
+        _myLoadView.alpha = 0.3;
+        _myLoadView.center = self.view.center;
+    }
+    return _myLoadView;
+}
 @end
