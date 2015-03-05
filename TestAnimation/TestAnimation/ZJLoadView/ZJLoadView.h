@@ -9,4 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface ZJLoadView : UIView
+
+-(void)startAnimation;
+-(void)endAnimation;
+
 @end

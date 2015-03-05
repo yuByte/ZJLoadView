@@ -23,11 +23,21 @@
 
 }
 
+- (IBAction)start:(id)sender
+{
+    [self.myLoadView startAnimation];
+
+}
+- (IBAction)pause:(id)sender
+{
+    [self.myLoadView endAnimation];
+}
+
 -(ZJLoadView *)myLoadView
 {
     if (_myLoadView== nil)
     {
-        _myLoadView = [[ZJLoadView alloc] initWithFrame:CGRectMake(0, 0, 110, 150)];
+        _myLoadView = [[ZJLoadView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
         _myLoadView.layer.cornerRadius = 5;
         _myLoadView.backgroundColor = [UIColor blackColor];
         _myLoadView.alpha = 0.3;
